@@ -54,20 +54,20 @@ public class PreyControl : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            HP -= 1;
+   // private void OnTriggerEnter(Collider2D collision)
+   // {
+    //    if (collision.gameObject.CompareTag("Player"))
+   //     {
+    //        HP -= 1;
 
-            if (HP <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
+   //         if (HP <= 0)
+    //        {
+   //             Destroy(gameObject);
+   //         }
+   //     }
       
 
     
-    }
+  //  }
 
 } 
