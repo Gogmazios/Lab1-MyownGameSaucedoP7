@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 1110732463334336304}
   - component: {fileID: 4695251246868240735}
   - component: {fileID: 3716958161332459684}
+  - component: {fileID: 5809856616115656374}
   m_Layer: 0
   m_Name: Medium prey
   m_TagString: Untagged
@@ -480,7 +481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5864360461484552717}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.0532298, y: 1.4342914, z: 0.024197634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -573,7 +574,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -616,6 +617,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5809856616115656374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864360461484552717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e0760f0a158734da77ad9891c8849a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  HP: 2
+  maxHP: 2
+  enemy: {fileID: 5864360461484552717}
+  player: {fileID: 0}
+  Meat: {fileID: 0}
+  range: 5
+  maxDistance: 35
 --- !u!1 &7985666596864623842
 GameObject:
   m_ObjectHideFlags: 0

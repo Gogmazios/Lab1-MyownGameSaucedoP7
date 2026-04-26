@@ -1,4 +1,5 @@
 
+using System;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -138,4 +139,8 @@ public class Playercontrol : MonoBehaviour
 
     }
 
+    internal void Collect(PreyControl preyControl)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UI;
 
 public class PreyControl : MonoBehaviour
@@ -10,6 +11,9 @@ public class PreyControl : MonoBehaviour
     public float maxHP = 3;
     public GameObject enemy;
     public GameObject player;
+    public GameObject Meat; 
+   // public float hungerValue = 50f;
+
 
     [SerializeField]
     float range;
@@ -53,21 +57,18 @@ public class PreyControl : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            HP -= 1;
 
-   // private void OnTriggerEnter(Collider2D collision)
-   // {
-    //    if (collision.gameObject.CompareTag("Player"))
-   //     {
-    //        HP -= 1;
+            if (HP <= 0)
+            {
+                Instantiate(Meat, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
+    }
 
-   //         if (HP <= 0)
-    //        {
-   //             Destroy(gameObject);
-   //         }
-   //     }
-      
-
-    
-  //  }
-
-} 
+}
