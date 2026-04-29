@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 5809856616115656374}
   m_Layer: 0
   m_Name: Medium prey
-  m_TagString: Untagged
+  m_TagString: prey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,7 +574,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -635,8 +635,9 @@ MonoBehaviour:
   enemy: {fileID: 5864360461484552717}
   player: {fileID: 0}
   Meat: {fileID: 0}
-  range: 5
-  maxDistance: 35
+  MeatAmount: 2
+  range: 1
+  maxDistance: 1
 --- !u!1 &7985666596864623842
 GameObject:
   m_ObjectHideFlags: 0

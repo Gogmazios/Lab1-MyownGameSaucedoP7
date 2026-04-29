@@ -11,9 +11,9 @@ public class PreyControl : MonoBehaviour
     public float maxHP = 3;
     public GameObject enemy;
     public GameObject player;
-    public GameObject Meat; 
-   // public float hungerValue = 50f;
-
+    public GameObject Meat;
+    // public float hungerValue = 50f;
+    public int MeatAmount = 1;
 
     [SerializeField]
     float range;
@@ -28,13 +28,15 @@ public class PreyControl : MonoBehaviour
     {
         SetNewDestination();
         HP = maxHP;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
-        if (Vector2.Distance(transform.position, wayPoint) < range)
+        rb.MovePosition(Vector2.MoveTowards(rb.position, wayPoint, speed * Time.fixedDeltaTime));
+
+        if (Vector2.Distance(rb.position, wayPoint) < range)
         {
             SetNewDestination();
         }
@@ -49,26 +51,34 @@ public class PreyControl : MonoBehaviour
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (wayPoint.x < transform.position.x)
+        else if (wayPoint.x < transform.position.x)
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
-
-
+       
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player"))
         {
             HP -= 1;
 
             if (HP <= 0)
             {
-                Instantiate(Meat, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                Endlife();
             }
         }
+    }
+
+    void Endlife()
+    {
+        for (int i = 0; i < MeatAmount; i++)
+        {
+            Instantiate(Meat, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
     }
 
 }

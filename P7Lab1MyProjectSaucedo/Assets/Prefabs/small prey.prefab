@@ -397,11 +397,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.031044006, y: 0.26324296}
+  m_Offset: {x: -0.041056603, y: 0.31679192}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.57377046, y: -0.03448276}
@@ -411,7 +411,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8851528, y: 0.93929124}
+  m_Size: {x: 0.62483627, y: 0.6179971}
   m_EdgeRadius: 0
 --- !u!50 &7337077109954297189
 Rigidbody2D:
@@ -458,8 +458,9 @@ MonoBehaviour:
   enemy: {fileID: 5766684628401293192}
   player: {fileID: 0}
   Meat: {fileID: 0}
-  range: 5
-  maxDistance: 50
+  MeatAmount: 1
+  range: 1
+  maxDistance: 1
 --- !u!1 &7657830215113753208
 GameObject:
   m_ObjectHideFlags: 0
